@@ -14,6 +14,9 @@
         text-align: center;
         font-size: 50px;
     }
+    .songs{
+        height: 300;
+    }
 </style>
     <?php 
     if (isset($_POST["singer"])){
@@ -120,11 +123,12 @@
                     echo "<h2>" . "Albums Here!" . "</h2>";
                     for ($i = 0;$i<$len;$i++)
                     {
-                        echo "<div class='col'>";
+                        echo "<div class='col songs'>";
                         $temp = mysqli_query($link, "SELECT * from Albums where id='$albums[$i]'");
 
                         if ($temp){
                             $infos = mysqli_fetch_array($temp);
+                            $issue_d = $infos["issue date"];
                             echo "<p>";
                             echo "<a " . "href='".$infos['url']. "'>";
                             echo $infos['name'];
@@ -133,6 +137,7 @@
                             echo "<a href='".$infos['url']."'>";
                             echo "<img src='" . $infos['cover'] . "'alt='" . $infos['name'] ."'>";
                             echo "</a>";
+                            echo "Issue date: " . $issue_d;
                         }
                         echo "<br>";
                         echo "</div>";
