@@ -26,6 +26,12 @@
             #cover{
                 margin-left: 20px;
             }
+            h2{
+                width: 100%;
+            }
+            .songs{
+                height: 300;
+            }
 
         </style>
     <base target="_blank">
@@ -63,6 +69,23 @@
             $issue_date = $infos["issue date"];
             $intro = $infos["introduction"];
             $cover = $infos["cover"];
+            $singer = $infos["singer"];
+            $songs = $infos["songs"];// the id of each song
+            $comments = $infos["album comments"];// The string of the number of comments
+            $song_a = explode(",",$songs);
+            $len = count($song_a);
+
+            foreach ($song_a as $key => $value) {
+                $value = substr($value,2,-1);
+                $song_a[$key] = $value;
+            }
+            $song_a[$len-1] = substr($song_a[$len-1],0,-1);
+        }
+        else{
+            echo "<p class='warning'><strong>";
+            echo "404 NOT FOUND!<br>";
+            echo "</strong></p>";
+            exit(0);
         }
     ?>
         <title><?php echo $album?></title>
@@ -113,6 +136,10 @@
                         Issue Date:
                         <?php echo "<strong>" . $issue_date . "</strong>"; ?>
                     </h2>
+                    <p>
+                        
+                        <?php echo "<strong>" ."Singer: " . $singer . "</strong>"; ?>
+                    </p>
                 </div>
             </div>
             <div class="row intro">
@@ -129,7 +156,31 @@
                 <img src="" alt="可视化图片">
             </div>
             <div class="row">
+                <?php
+                    echo "<h2>" . "Songs Here!" . "</h2>";
+                    
+                    for ($i=0; $i < $len; $i++) { 
+                        echo "<div class='col songs'>";
+                        $temp = mysqli_query($link, "SELECT * from Songs where id='$song_a[$i]'");
+                        if ($temp){
+                            $infos = mysqli_fetch_array($temp);
+                            $name = $infos["name"];
+                            $url = $infos["url"];
+                            $song_cover = $infos["cover"];
+                            $numOfCom = $infos["commentnum"];
+                            echo "<p>";
 
+                            echo "<a href='" . $url . "'>";
+                            echo $name . "</a></p>";
+                            echo "<a href='" . $url . "'>";
+                            echo "<img src='" . $song_cover . "' alt='" . $name . "'</a>";
+                            
+                        }
+                        echo "<br>";
+                    echo "</div>";
+                    }
+                    
+                ?>
             </div>
         </div>
     </body>

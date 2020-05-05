@@ -129,15 +129,17 @@
                         if ($temp){
                             $infos = mysqli_fetch_array($temp);
                             $issue_d = $infos["issue date"];
+                            echo "<h4>";
+                            echo "Issue date: " . $issue_d . "</h4>";
                             echo "<p>";
                             echo "<a " . "href='".$infos['url']. "'>";
                             echo $infos['name'];
                             echo "</a>";
                             echo "</p>";
+
                             echo "<a href='".$infos['url']."'>";
                             echo "<img src='" . $infos['cover'] . "'alt='" . $infos['name'] ."'>";
-                            echo "</a>";
-                            echo "Issue date: " . $issue_d;
+                            echo "</a>" ;
                         }
                         echo "<br>";
                         echo "</div>";

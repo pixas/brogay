@@ -47,7 +47,8 @@ if ($result1){
     $song_url = $infos["url"];
     $lyrics = $infos["lyrics"];
     $cover = $infos["cover"];
-
+    $comments = $infos["comments"];
+    $commentnums = $infos["commentnum"];
 }
 ?>
         <title><?php echo $song_name?></title>
@@ -96,6 +97,9 @@ if ($result1){
                         echo "<a href='" . $song_url ."'>";
                         echo $song_name;
                         echo "</a>";
+                        echo "<p>";
+                        echo "Total comments: " . $commentnums;
+                        echo "</p>";
                         ?>
                     </h2>
                     </div>
@@ -104,10 +108,25 @@ if ($result1){
                             echo "<a href='" . $song_url . "'>";
                             echo "<img src='" . $cover . "' alt='Cover' id='song_image'>";
                             echo "</a>";
+                            
                         ?>
                     </div>
                     <div class="row visualization">
                         <img src="" alt="可视化图片">
+                    </div>
+                    <div class="row comments">
+                        <?php
+                            $com_a = explode(' ',$comments);
+                            $len = count($com_a);
+                            foreach ($com_a as $key=>$value) { 
+                                $value = substr($value,2,-1);
+                                $com_a[$key] = $value;
+                            }
+                            $com_a[$len-1] = substr($com_a[$len-1],0,-1);
+                            for ($i=0; $i < $len; $i++) { 
+                                echo $com_a[$i] . "<br>";
+                            }
+                        ?>
                     </div>
                 </div>
                 <div class="col" id="lyrics">
