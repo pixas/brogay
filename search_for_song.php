@@ -70,13 +70,13 @@ if ($result1){
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="singer.html" class="nav-link">Singers</a>
+                        <a href="../html/singer.html" class="nav-link" >Singers</a>
                     </li>
                     <li class="nav-item">
-                        <a href="album.html" class="nav-link">Albums</a>
+                        <a href="../html/album.html" class="nav-link">Albums</a>
                     </li>
                     <li class="nav-item">
-                        <a href="song.html" class="nav-link">Songs</a>
+                        <a href="../html/song.html" class="nav-link">Songs</a>
                     </li>
                 </ul>
             </div>
@@ -130,20 +130,20 @@ if ($result1){
                     </div>
                 </div>
                 <div class="col" id="lyrics">
-                    <p>
-                        <?php 
-                            echo  "<strong>" . "Lyrics: ". "</strong>" . "<br>";
-                            $lyric_array = explode(' ',$lyrics);
-                            foreach ($lyric_array as $key => $value) {
-                                if ($value === "作词" or $value === ':' or $value === "作曲" or $value === "唱"){
-                                    echo "<strong>" . $value ." </strong>" ; 
-                                }
-                                else{
-                                    echo $value . "<br>";
-                                }
+                    <?php 
+                        echo  "<strong>" . "Lyrics: ". "</strong>" . "<br>";
+                        $lyric_array = explode(' ',$lyrics);
+                        foreach ($lyric_array as $key => $value) {
+                            echo "<p class='lyric'>";
+                            if ($value === "作词" or $value === ':' or $value === "作曲" or $value === "唱"){
+                                echo "<strong>" . $value ." </strong>" ; 
                             }
-                        ?>
-                    </p>
+                            else{
+                                echo $value . "<br>";
+                            }
+                            echo "</p>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>
