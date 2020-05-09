@@ -15,7 +15,106 @@
                 width: 256;
                 height: 256;
             }
-        </style>
+            /* ~~~~~~~ INIT. BTN ~~~~~~~ */
+
+            .btn {		
+            	position: relative;	
+            	padding: 1.4rem 4.2rem;
+            	padding-right: 2.1rem;
+            	font-size: 1.4rem;
+                /* height: 3rem; */
+            	color: var(--inv);
+            	letter-spacing: 0.1rem;
+            	text-transform: uppercase;
+            	-webkit-transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+            	transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);	
+            	-webkit-user-select: none;	
+	               -moz-user-select: none;	
+                    -ms-user-select: none;	
+	                    user-select: none;
+                /* margin-left: 10%; */
+            }
+
+            .btn:before, .btn:after {
+            	content: '';
+            	position: absolute;	
+            	-webkit-transition: inherit;	
+            	transition: inherit;
+	            z-index: -1;
+            }
+
+            .btn:hover {
+            	color: var(--def);
+            	-webkit-transition-delay: .6s;
+            	        transition-delay: .6s;
+            }
+
+            .btn:hover:before {
+            	-webkit-transition-delay: 0s;
+            	        transition-delay: 0s;
+            }
+
+            .btn:hover:after {
+            	background: var(--inv);
+            	-webkit-transition-delay: .4s;
+            	        transition-delay: .4s;
+            }
+
+            /* From Top */
+
+            .from-top:before, 
+            .from-top:after {
+            	left: 0;
+            	height: 0;
+            	width: 100%;
+            }
+
+            .from-top:before {
+            	bottom: 0;	
+            	border: 1px solid var(--inv);
+            	border-top: 0;
+            	border-bottom: 0;
+            }
+
+            .from-top:after {
+               	top: 0;
+            	height: 0;
+            }
+
+            .from-top:hover:before,
+            .from-top:hover:after {
+            	height: 100%;
+            }
+            /* ~~~~~~~~~~~~ GLOBAL SETTINGS ~~~~~~~~~~~~ */
+
+            *, *:before, *:after {
+            	-webkit-box-sizing: border-box;
+            	        box-sizing: border-box;
+            }
+
+            body {
+            	--def: #96B7C4; 	
+            	--inv: #fff;
+            	display: -webkit-box;
+            	display: -ms-flexbox;
+            	display: flex;
+            	-webkit-box-pack: center;
+            	    -ms-flex-pack: center;
+            	        justify-content: center;
+            	-webkit-box-align: center;
+            	    -ms-flex-align: center;
+            	        align-items: center;
+            	-webkit-box-orient: vertical;
+            	-webkit-box-direction: normal;
+            	    -ms-flex-direction: column;
+            	        flex-direction: column;
+	
+            	background-image: linear-gradient(-25deg, #616161 0%, #96B7C4 100%);
+            }
+
+            div {margin-bottom: 3rem;}
+            div:last-child {margin-bottom: 0;}
+    </style>
         <?php 
 
 if (isset($_POST["song"])){
@@ -70,13 +169,13 @@ if ($result1){
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../html/singer.html" class="nav-link" >Singers</a>
+                        <a href="singer.html" class="nav-link">Singers</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../html/album.html" class="nav-link">Albums</a>
+                        <a href="album.html" class="nav-link">Albums</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../html/song.html" class="nav-link">Songs</a>
+                        <a href="song.html" class="nav-link">Songs</a>
                     </li>
                 </ul>
             </div>
@@ -130,20 +229,25 @@ if ($result1){
                     </div>
                 </div>
                 <div class="col" id="lyrics">
-                    <?php 
-                        echo  "<strong>" . "Lyrics: ". "</strong>" . "<br>";
-                        $lyric_array = explode(' ',$lyrics);
-                        foreach ($lyric_array as $key => $value) {
-                            echo "<p class='lyric'>";
-                            if ($value === "作词" or $value === ':' or $value === "作曲" or $value === "唱"){
-                                echo "<strong>" . $value ." </strong>" ; 
+                    
+                        <?php 
+                            echo  "<h3 style='text-align:center;font-weight:bold;font-size:200%'>";
+                            echo "Lyrics";
+                            echo "</h3>";
+                            $lyric_array = explode(' ',$lyrics);
+                            foreach ($lyric_array as $key => $value) {
+                                if ($value === "作词" or $value === ':' or $value === "作曲" or $value === "唱"){
+                                    echo "<p class='btn'>";
+                                    echo "<strong>" . $value ." </strong>" ; 
+                                    echo "</p>";
+                                }
+                                else{
+                                    echo "<p class='btn from-top'>";
+                                    echo $value;
+                                    echo "</p>";
+                                }
                             }
-                            else{
-                                echo $value . "<br>";
-                            }
-                            echo "</p>";
-                        }
-                    ?>
+                        ?>
                 </div>
             </div>
         </div>
