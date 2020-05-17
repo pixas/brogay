@@ -1,0 +1,366 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>songs</title>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="css/poposlides.css" rel="stylesheet" >
+<style>
+.s1 {
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  margin: -150px 0 0 -250px;
+  width: 500px;
+  height: 300px;
+  background: rgba(255,255,255,.7);
+  box-shadow: 0 0 15px rgba(0,0,0,.3);
+}
+
+.s1 p {
+  margin: 0;
+  padding: 50px 0 20px 0;
+  font-family: Arial;
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.s1 span {
+  display: block;
+  font-family: Arial;
+  font-size: 25px;
+  color: #666;
+  text-align: center;
+}
+
+.s1 a {
+  margin: 20px auto 0 auto;
+  display: block;
+  width: 220px;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 25px;
+  background: #f88371;
+}
+
+.s1 a:hover { background: #ed6f5c; }
+ @media (max-width:480px) {
+
+.s1 {
+  margin: -127px 0 0 0;
+  width: 80%;
+  height: 255px;
+  left: 10%;
+}
+
+.s1 p { font-size: 36px; }
+
+.s1 span { font-size: 18px; }
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.codrops-demos {
+	float: right;
+	padding-top: 0px;
+}
+
+
+.codrops-demos a {
+    display: inline-block;
+    margin: 10px;
+    color: #333;
+    font-weight: 700;
+    line-height: 30px;
+    border-bottom: 4px solid transparent;
+}
+
+.codrops-demos a:hover {
+	color: #883d59;
+	border-color: #883d59;
+}
+
+.codrops-demos a.current-demo,
+.codrops-demos a.current-demo:hover {
+	color: #aaa;
+	border-color: #aaa;
+}
+
+
+.searchcontainer{
+  height: 5px;
+}
+
+
+
+/* body {
+	background: #fff;
+	color: #666;
+	font: 85%/140% Arial, Helvetica, sans-serif;
+	width: 800px;
+	max-width: 96%;
+	margin: 0 auto;
+}
+a {
+	color: #69C;
+	text-decoration: none;
+}
+a:hover {
+	color: #F60;
+} */
+h1 {
+	font: 1.7em;
+	line-height: 110%;
+	color: #000;
+}
+p {
+	margin: 0 0 20px;
+}
+
+/* reset webkit search input browser style */
+input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; /* remove the search and cancel icon */
+}
+
+/* search input field */
+input[type=search] {
+	background: #ededed url(images/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 55px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: #6dcff6;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+/* placeholder */
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+/* demo B */
+#demo-b input[type=search] {
+	width: 15px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+#demo-b input[type=search]:hover {
+	background-color: #fff;
+}
+#demo-b input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#demo-b input:-moz-placeholder {
+	color: transparent;
+}
+#demo-b input::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.namecontainer{
+  width:1000px;
+  height:1000px;
+  text-align: center;
+}
+</style>
+
+</head>
+<body>
+  <div class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a href="#" class="navbar-brand">
+        <img src="http://file03.16sucai.com/2016/03/2016yisxqhd5vv4.jpg" alt="Logo" width="40px">
+    </a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="../ranking_of_singers/index.html" class="nav-link">Singers</a>
+        </li>
+        <li class="nav-item">
+            <a href="../ranking_of_albums/index.html" class="nav-link">Albums</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Songs</a>
+        </li>
+    </ul>
+</div>
+<div class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <form action="php/onesong.php" class="form-inline" method="GET">
+        <input type="text" class="form-control" placeholder="Search" name="song">
+        <button class="btn btn-success" type="submit">Search</button>
+    </form>
+</div>
+	<!-- <div class="searchcontainer">
+    <nobr>
+      <form method="GET" action="php/onesong.php">
+        <input type="search" placeholder="Search" name="song">
+        <input type="submit" value="Search">
+      </form>
+    <h1 style="font-size: large;">&nbsp;&nbsp;&nbsp;Here're top 10 songs!</h1>
+  </nobr>
+  </div>
+		
+		<nav class="codrops-demos">
+			<a href="../ranking_of_singers/index.html"><p style="font-size: small;">singers</p></a>
+			<a href="../ranking_of_albums/index.html"><p style="font-size: small;">albums</p></a>
+      <a class="current-demo" href="index.html"><p style="font-size: small;">songs&nbsp;&nbsp;&nbsp;</p></a>
+    </nav> -->
+
+
+  
+<div class="slides-box">
+    <ul class="slides">
+      <!-- 1 -->
+      <li style="background: url('https://p2.music.126.net/ql3nSwy0XKow_HAoZzRZgw==/109951163111196186.jpg?param=640y300') top; background-repeat: no-repeat; background-size: 100% auto;">
+        <div class="namecontainer">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a href="php/onesong.php ? song=周杰伦">
+        <p style="color: black;">1st:周杰伦</p>
+        </a>
+        <p>total comments:7771258</p>
+        </div>
+        </li>
+        <!-- 2 -->
+        <li style="background: url('https://p1.music.126.net/W__FCWFiyq0JdPtuLJoZVQ==/109951163765026271.jpg?param=640y300') top; background-repeat: no-repeat; background-size: 100% auto;">
+          <div class="namecontainer">
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <a href="php/onesong.php ? song=薛之谦">
+          <p style="color: black;">2nd:薛之谦</p>
+          </a>
+          <p>total comments:6691270</p>
+          </div>
+          </li>
+          <!-- 3 -->
+          <li style="background: url('https://p1.music.126.net/_D9P0JKRDYm3jEay9EfhRw==/109951163536274581.jpg?param=640y300') top; background-repeat: no-repeat; background-size: 100% auto;">
+            <div class="namecontainer">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <a href="php/onesong.php ? song=许嵩">
+            <p style="color: white;">3rd:许嵩</p>
+            </a>
+            <p style="color: white;">total comments:6363280</p>
+            </div>
+            </li>
+            <!-- 4 -->
+            <li style="background: url('https://p2.music.126.net/nILBk4DaE3yV__25uq-5GQ==/18641120139241412.jpg?param=640y300') top; background-repeat: no-repeat; background-size: 100% auto;">
+              <div class="namecontainer">
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              <a href="php/onesong.php ? song=陈奕迅">
+              <p style="color: black;">4th:陈奕迅</p>
+              </a>
+              <p>total comments:3339069</p>
+              </div>
+              </li>
+              <!-- 5 -->
+              <li style="background: url('https://p1.music.126.net/tMH2KjUioNW57zbixCA5Pg==/109951164158510116.jpg?param=640y300') top; background-repeat: no-repeat; background-size: 100% auto;">
+                <div class="namecontainer">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <a href="php/onesong.php ? song=华晨宇">
+                <p style="color: white;">5th:华晨宇</p>
+                </a>
+                <p style="color: white;">total comments:3159260</p>
+                </div>
+                </li>
+                <!-- 6 -->
+                <li style="background: url('https://p1.music.126.net/I1uF8g0-1avqicEcCsZIUg==/109951164250429506.jpg?param=640y300') top; background-repeat: no-repeat; background-size: 100% auto;">
+                  <div class="namecontainer">
+                  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                  <a href="php/onesong.php ? song=摩登兄弟刘宇宁">
+                  <p style="color: black;">6th:摩登兄弟刘宇宁</p>
+                  </a>
+                  <p>total comments:2719541</p>
+                  </div>
+                  </li>
+                  <!-- 7 -->
+                  <li style="background: url('https://p1.music.126.net/_cB2figc8IpT89DYhpARxA==/3389794350704969.jpg?param=640y300') top; background-repeat: no-repeat; background-size: 100% auto;">
+                    <div class="namecontainer">
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <a href="php/onesong.php ? song=林俊杰">
+                    <p style="color: black;">7th:林俊杰</p>
+                    </a>
+                    <p>total comments:2608799</p>
+                    </div>
+                    </li>
+                    <!-- 8 -->
+                    <li style="background: url('https://p1.music.126.net/5a8JbNUEwmlzspiPYr8MDQ==/109951164538801813.jpg?param=640y300') top; background-repeat: no-repeat; background-size: 100% auto;">
+                      <div class="namecontainer">
+                      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                      <a href="php/onesong.php ? song=李荣浩">
+                      <p style="color: black;">8th:李荣浩</p>
+                      </a>
+                      <p>total comments:2022251</p>
+                      </div>
+                      </li>
+                      <!-- 9 -->
+                      <li style="background: url('https://p2.music.126.net/r1zBwrggxz1IkMPoIm7c7A==/109951164120068913.jpg?param=640y300') top; background-repeat: no-repeat; background-size: 100% auto;">
+                        <div class="namecontainer">
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <a href="php/onesong.php ? song=Lil Ghost小鬼">
+                        <p style="color: black;">9th:Lil Ghost小鬼</p>
+                        </a>
+                        <p>total comments:1771314</p>
+                        </div>
+                        </li>
+                        <!-- 10 -->
+                        <li style="background: url('https://p1.music.126.net/j6KWzSdlRKzZUwJnQx3vBA==/3300733912483912.jpg?param=640y300') top; background-repeat: no-repeat; background-size: 100% auto;">
+                          <div class="namecontainer">
+                          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                          <a href="php/onesong.php ? song=赵雷">
+                          <p style="color: white;">10th:赵雷</p>
+                          </a>
+                          <p style="color: white;">total comments:1704735</p>
+                          </div>
+                          </li>
+    </ul>
+</div>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/poposlides.js"></script> 
+<script>
+	$(".slides").poposlides();
+</script>
+
+</body>
+</html>
