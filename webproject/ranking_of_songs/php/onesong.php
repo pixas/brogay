@@ -146,12 +146,29 @@ if ($result1){
     $song_url = $infos["url"];
     $lyrics = $infos["lyrics"];
     $cover = $infos["cover"];
-    $comments = $infos["comments"];
     $commentnums = $infos["commentnum"];
     $lyrics_common_words = $infos["lyrics common words"];
     $comments_common_words = $infos["comments common words"];
-    var_dump($lyrics_common_words);
-    var_dump($comments_common_words);
+    $lyrics_array = explode(',',$lyrics_common_words);
+    $lyric_len = count($lyrics_array);
+    $comment_array = explode(',',$comments_common_words);
+    $comment_len = count($comment_array);
+    foreach ($lyrics_array as $key => $value) {
+        $value = substr($value,2,-1);
+        $lyrics_array[$key] = $value;
+    }
+    $lyrics_array[$lyric_len-1] = substr($lyrics_array[$lyric_len-1],0,-1);
+    foreach ($lyrics_array as $key => $value) {
+        echo $value . "<br>";
+    }
+    foreach ($comment_array as $key => $value) {
+        $value = substr($value,2,-1);
+        $comment_array[$key] = $value;
+    }
+    $comment_array[$comment_len-1] = substr($comment_array[$comment_len-1],0,-1);
+    foreach ($comment_array as $key => $value) {
+        echo $value . "<br>";
+    }
 }
 ?>
         <title><?php echo $song_name?></title>
@@ -217,20 +234,7 @@ if ($result1){
                     <div class="row visualization">
                         <img src="" alt="可视化图片">
                     </div>
-                    <div class="row comments">
-                        <?php
-                            $com_a = explode(" ",$comments);
-                            $len = count($com_a);
-                            foreach ($com_a as $key=>$value) { 
-                                $value = substr($value,2,-1);
-                                $com_a[$key] = $value;
-                            }
-                            $com_a[$len-1] = substr($com_a[$len-1],0,-1);
-                            for ($i=0; $i < $len; $i++) { 
-                                echo $com_a[$i] . "<br>";
-                            }
-                        ?>
-                    </div>
+                    
                 </div>
                 <div class="col" id="lyrics">
                     
