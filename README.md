@@ -4,13 +4,9 @@
 
 ### HOW TO SEARCH
 
-We develop a web frame. Users can run the corresponding `html` files to run the search `php` file. Users **cannot** run the `php` file directly. Because in that way users cannot find what they are hope to find.
-
-### HOW TO LINK WITH DATABASE
-
-
+Users can use the corresponding `index.html` file to begin the search. The `index.html` file is connected with the corresponding `php` file which is now already loaded with `Elastic Search`. And the `search_.php` file will connect corresponding `onesinger.php`, for example, to fetch what users want to get.
 
 ## THE LEFT PROCEDURE
 
-These pages do not load the appropriate search engine for the reason that the main frame and `css` style has not been designed well. Fortunately, the main functions have been already if you don't mind some ugly and disgusting design.
-
+1. The results of vague search has not been loaded with smart `css` styles. Please some of you load a suitable `css` style for each `search_singer.php`, `search_song.php`, `search_album.php`.  
+2. The visualizaiton work has not been loaded yet.
