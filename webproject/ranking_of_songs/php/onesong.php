@@ -184,7 +184,7 @@ if ($result1){
                 </ul>
             </div>
             <div class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <form action="search_song.php" class="form-inline" method="GET">
+                <form action="../../search/search_song.php" class="form-inline" method="GET">
                     <input type="text" class="form-control" placeholder="Search" name="song">
                     <button class="btn btn-success" type="submit">Search</button>
                 </form>

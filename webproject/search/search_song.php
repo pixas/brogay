@@ -208,7 +208,7 @@ $len = count($total);
                     echo "<img src='" . $cover . "' alt='image'>.<br>";
                     echo "</div>";
                     echo "<div class='col'>";
-                    echo "<a href = '" . "../ranking_of_songs/php/onesong.php?name=" . $song_name . "'>";
+                    echo "<a href = '" . "../ranking_of_songs/php/onesong.php?song=" . $song_name . "'>";
                     echo $song_name."<br>";
                     echo "</a>";
                     echo "</div>";
