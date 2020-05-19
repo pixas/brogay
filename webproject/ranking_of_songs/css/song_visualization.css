@@ -1,0 +1,134 @@
+/* tagclouds */
+
+    .fl{ float: left; }
+    .fr{ float: right; }
+    .wrapper{ width: 1200px; height: 300px; margin: 0 auto; }
+    .wrapper p{ padding-top: 150px; line-height: 27px; color: #999; font-size: 14px; text-align: center;  }
+    .tagcloud { position: relative; margin-top:-150px; }
+    .tagcloud a{ position: absolute;  top: 0; left: 0;  display: block; padding: 11px 30px; color: #333; font-size: 16px; border: 1px solid #e6e7e8; border-radius: 18px; background-color: #f2f4f8; text-decoration: none; white-space: nowrap;
+      -o-box-shadow: 6px 4px 8px 0 rgba(151,142,136,.34);
+      -ms-box-shadow: 6px 4px 8px 0 rgba(151,142,136,.34);
+      -moz-box-shadow: 6px 4px 8px 0 rgba(151,142,136,.34);
+      -webkit-box-shadow: 6px 4px 8px 0 rgba(151,142,136,.34);
+      box-shadow: 6px 4px 8px 0 rgba(151,142,136,.34);
+      -ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135, Color='#000000')";/*兼容ie7/8*/
+      filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=125, Strength=9);
+      /*strength是阴影大小，direction是阴影方位，单位为度，可以为负数，color是阴影颜色 （尽量使用数字）使用IE滤镜实现盒子阴影的盒子必须是行元素或以行元素显示（block或inline-block;）*/
+    }
+    .tagcloud a:hover{ color: #3385cf; }
+
+
+    .warning{
+        text-align: center;
+        font-size: 50px;
+    }
+    #song_name{
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    #song_image{
+        margin-left: 20px;
+        margin-top: 10px;
+        width: 256;
+        height: 256;
+    }
+
+    /* ~~~~~~~ INIT. BTN ~~~~~~~ */
+
+    .btn {		
+        position: relative;	
+        padding: 1.4rem 4.2rem;
+        padding-right: 2.1rem;
+        font-size: 1.4rem;
+        /* height: 3rem; */
+        color: var(--inv);
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        -webkit-transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+        transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);	
+        -webkit-user-select: none;	
+           -moz-user-select: none;	
+            -ms-user-select: none;	
+                user-select: none;
+        /* margin-left: 10%; */
+    }
+
+    .btn:before, .btn:after {
+        content: '';
+        position: absolute;	
+        -webkit-transition: inherit;	
+        transition: inherit;
+        z-index: -1;
+    }
+
+    .btn:hover {
+        color: var(--def);
+        -webkit-transition-delay: .6s;
+                transition-delay: .6s;
+    }
+
+    .btn:hover:before {
+        -webkit-transition-delay: 0s;
+                transition-delay: 0s;
+    }
+
+    .btn:hover:after {
+        background: var(--inv);
+        -webkit-transition-delay: .4s;
+                transition-delay: .4s;
+    }
+
+    /* From Top */
+
+    .from-top:before, 
+    .from-top:after {
+        left: 0;
+        height: 0;
+        width: 100%;
+    }
+
+    .from-top:before {
+        bottom: 0;	
+        border: 1px solid var(--inv);
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    .from-top:after {
+           top: 0;
+        height: 0;
+    }
+
+    .from-top:hover:before,
+    .from-top:hover:after {
+        height: 100%;
+    }
+    /* ~~~~~~~~~~~~ GLOBAL SETTINGS ~~~~~~~~~~~~ */
+
+    *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+    body {
+        --def: #96B7C4; 	
+        --inv: #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+
+        background-image: linear-gradient(-25deg, #b9eeb7 0%, #96B7C4 100%);
+    }
+
+    /* div {margin-bottom: 3rem;} */
+    div:last-child {margin-bottom: 0;}
