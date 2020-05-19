@@ -99,18 +99,18 @@
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../../ranking_of_singers/index.html" class="nav-link">Singers</a>
+                        <a href="../../ranking_of_singers/index.html" class="nav-link" target="_self">Singers</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../index.html" class="nav-link">Albums</a>
+                        <a href="../index.html" class="nav-link" target="_self">Albums</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../../ranking_of_songs/index.html" class="nav-link">Songs</a>
+                        <a href="../../ranking_of_songs/index.html" class="nav-link" target="_self">Songs</a>
                     </li>
                 </ul>
             </div>
             <div class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <form action="../../search/search_album.php" class="form-inline" method="GET">
+                <form action="../../search/search_album.php" class="form-inline" method="GET" target="_self">
                     <input type="text" class="form-control" placeholder="Search" name="album">
                     <button class="btn btn-success" type="submit">Search</button>
                 </form>
@@ -119,13 +119,13 @@
                 <div class="col">
                     <h2>Name: 
                         <?php
-                            echo "<a href='" . $album_url ."'>";
+                            echo "<a target='_blank' href='" . $album_url ."'>";
                             echo $album;
                             echo "</a>";
                         ?>
                     </h2>
                     <?php
-                        echo "<a href='" . $album_url . "'>";
+                        echo "<a target='_blank' href='" . $album_url . "'>";
                         echo "<img src='" . $cover . "' alt='cover' id='cover'>";
                         echo "</a>";
                     ?>
@@ -171,9 +171,9 @@
                             $numOfCom = $infos["commentnum"];
                             echo "<p>";
 
-                            echo "<a href='" . $url . "'>";
+                            echo "<a target='_blank' href='" . $url . "'>";
                             echo $name . "</a></p>";
-                            echo "<a href='" . $url . "'>";
+                            echo "<a target='_blank' href='" . $url . "'>";
                             echo "<img src='" . $song_cover . "' alt='" . $name . "'</a>";
                             
                         }

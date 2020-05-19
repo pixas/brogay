@@ -15,82 +15,6 @@
                 width: 256;
                 height: 256;
             }
-            /* ~~~~~~~ INIT. BTN ~~~~~~~ */
-
-            .btn {		
-            	position: relative;	
-            	padding: 1.4rem 4.2rem;
-            	padding-right: 2.1rem;
-            	font-size: 1.4rem;
-                /* height: 3rem; */
-            	color: var(--inv);
-            	letter-spacing: 0.1rem;
-            	text-transform: uppercase;
-            	-webkit-transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
-            	transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);	
-            	-webkit-user-select: none;	
-	               -moz-user-select: none;	
-                    -ms-user-select: none;	
-	                    user-select: none;
-                /* margin-left: 10%; */
-            }
-
-            .btn:before, .btn:after {
-            	content: '';
-            	position: absolute;	
-            	-webkit-transition: inherit;	
-            	transition: inherit;
-	            z-index: -1;
-            }
-
-            .btn:hover {
-            	color: var(--def);
-            	-webkit-transition-delay: .6s;
-            	        transition-delay: .6s;
-            }
-
-            .btn:hover:before {
-            	-webkit-transition-delay: 0s;
-            	        transition-delay: 0s;
-            }
-
-            .btn:hover:after {
-            	background: var(--inv);
-            	-webkit-transition-delay: .4s;
-            	        transition-delay: .4s;
-            }
-
-            /* From Top */
-
-            .from-top:before, 
-            .from-top:after {
-            	left: 0;
-            	height: 0;
-            	width: 100%;
-            }
-
-            .from-top:before {
-            	bottom: 0;	
-            	border: 1px solid var(--inv);
-            	border-top: 0;
-            	border-bottom: 0;
-            }
-
-            .from-top:after {
-               	top: 0;
-            	height: 0;
-            }
-
-            .from-top:hover:before,
-            .from-top:hover:after {
-            	height: 100%;
-            }
-            /* ~~~~~~~~~~~~ GLOBAL SETTINGS ~~~~~~~~~~~~ */
-
-            *, *:before, *:after {
-            	-webkit-box-sizing: border-box;
-            	        box-sizing: border-box;
-            }
 
             body {
             	--def: #96B7C4; 	
@@ -176,7 +100,7 @@ $len = count($total);
                 </ul>
             </div>
             <div class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <form action="search_singer.php" class="form-inline" method="GET">
+                <form action="search_singer.php" class="form-inline" method="GET" target="_self">
                     <input type="text" class="form-control" placeholder="Search" name="singer">
                     <button class="btn btn-success" type="submit">Search</button>
                 </form>
@@ -198,7 +122,7 @@ $len = count($total);
                     $issue_date = $source["issue date"];
 
                     echo "<div class='col'>";
-                    echo "<a href = '../ranking_of_albums/php/album.php?album=" . $album_name . "'>";
+                    echo "<a target='_self' href = '../ranking_of_albums/php/album.php?album=" . $album_name . "'>";
                     echo $album_name . "</a><br>";
                     echo "Issue date: " . $issue_date . "<br>";
                     echo "<img src='" . $cover . "' alt='image'><br>"; 

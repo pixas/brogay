@@ -42,8 +42,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>singer</title>
         <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-        <script src="js/modernizr.custom.63321.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <script src="../js/modernizr.custom.63321.js"></script>
         
 		<!--[if lte IE 7]><style>.support-note .note-ie{display:block;}</style><![endif]-->
 	</head>
@@ -55,18 +55,18 @@
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../index.html" class="nav-link">Singers</a>
+                        <a href="../index.html" class="nav-link" target="_self">Singers</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../../ranking_of_albums/index.html" class="nav-link">Albums</a>
+                        <a href="../../ranking_of_albums/index.html" class="nav-link" target="_self">Albums</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../../ranking_of_songs/index.html" class="nav-link">Songs</a>
+                        <a href="../../ranking_of_songs/index.html" class="nav-link" target="_self">Songs</a>
                     </li>
                 </ul>
             </div>
             <div class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <form action="../../search/search_singer.php" class="form-inline" method="GET">
+                <form action="../../search/search_singer.php" class="form-inline" method="GET" target="_self">
                     <input type="text" class="form-control" placeholder="Search" name="singer">
                     <button class="btn btn-success" type="submit">Search</button>
                 </form>
@@ -102,7 +102,7 @@
                             echo "<div class='content-perspective'>";
                             echo "<div class='content'>";
                             echo "<div class='content-inner'>";
-                            echo "<a " . "href='".$infos['url']. "'>";
+                            echo "<a " . "target='_blank' href='".$infos['url']. "'>";
                             echo "<h3>" . $infos['name'] . "</h3>";
                             echo "</a>";
                             echo "<p>" . $introduction .  "......</p>";

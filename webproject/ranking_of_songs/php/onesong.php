@@ -72,18 +72,18 @@ if ($result1){
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../../ranking_of_singers/index.html" class="nav-link">Singers</a>
+                        <a href="../../ranking_of_singers/index.html" class="nav-link" target="_self">Singers</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../../ranking_of_albums/index.html" class="nav-link">Albums</a>
+                        <a href="../../ranking_of_albums/index.html" class="nav-link" target="_self">Albums</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../index.html" class="nav-link">Songs</a>
+                        <a href="../index.html" class="nav-link" target="_self">Songs</a>
                     </li>
                 </ul>
             </div>
             <div class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <form action="../../search/search_song.php" class="form-inline" method="GET">
+                <form action="../../search/search_song.php" class="form-inline" method="GET" target="_self">
                     <input type="text" class="form-control" placeholder="Search" name="song">
                     <button class="btn btn-success" type="submit">Search</button>
                 </form>
@@ -96,7 +96,7 @@ if ($result1){
                             
                         <?php 
                         echo "Song: ";
-                        echo "<a href='" . $song_url ."'>";
+                        echo "<a target='_blank' href='" . $song_url ."'>";
                         echo $song_name;
                         echo "</a>";
                         echo "<p>";
@@ -107,7 +107,7 @@ if ($result1){
                     </div>
                     <div class="row">
                         <?php
-                            echo "<a href='" . $song_url . "'>";
+                            echo "<a target='_blank' href='" . $song_url . "'>";
                             echo "<img src='" . $cover . "' alt='Cover' id='song_image'>";
                             echo "</a>";
                             
@@ -129,7 +129,7 @@ if ($result1){
                         <?php
                             
                             foreach ($lyrics_array as $key => $value) {
-                                echo "<a href='#' style='font-size:20px;'>";
+                                echo "<a target='_self' href='#' style='font-size:20px;'>";
                                 echo $value;
                                 echo "</a>";
                             }
@@ -157,7 +157,7 @@ if ($result1){
                     <div class="tagcloud fr">
                         <?php
                             foreach ($comment_array as $key => $value) {
-                                echo "<a href='#'>";
+                                echo "<a target='_self' href='#' style='font-size:20px;'>";
                                 echo $value;
                                 echo "</a>";
                             }
